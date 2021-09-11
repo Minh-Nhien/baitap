@@ -7,11 +7,20 @@ public class Mang {
 	public static void main(String[] args) {
 	
 		Scanner scanner = new Scanner(System.in);
+		int index =0;
 		System.out.print("nhập vào số phấn tử của mảng:");
 		int n = scanner.nextInt();
+		do {
+			if(n <= 0)
+			{
+				System.out.println("nhập sai....."+"\nnhập lại..... ");
+				System.out.print("nhập vào số phấn tử của mảng:");
+				 n = scanner.nextInt();
+			}
+		}while(n <= 0);
+		
 		int[] a = new int[n];
-		System.out.println("nhập giá trị của mảng:");
-		for(int index=0; index<n; index++)
+		for( index = 0; index<n; index++)
 		{
 			System.out.print("a"+"["+(index+1)+"]=");
 			a[index]=scanner.nextInt();
@@ -19,7 +28,7 @@ public class Mang {
 		
 		
 //in ra		
-		int index =0;
+		 index=0;
 		System.out.print("các giá trị của mảng là :" );
 		do {
 			System.out.print(a[index]+" ");
@@ -36,7 +45,6 @@ public class Mang {
 		        {
 		        	min = a[index];
 		        }
-    
 		   }
 		   System.out.println("\nmin=" +min);
 		   
@@ -51,10 +59,11 @@ public class Mang {
 		   }
 		   System.out.println("max=" + max);
 //so ngto
-		   System.out.print("số nguyên tố là: ");
+		   int dem=0;
+		   int dem2=0;
 			for( index=0; index < n; index++)
 			{
-				int dem=0;
+				
 				for( int itemp = 1; itemp <= a[index]; itemp++)
 				{
 					if(a[index] % itemp == 0)
@@ -64,12 +73,16 @@ public class Mang {
 				}
 				if(dem == 2)
 				{
-					
-					System.out.print( a[index] + " ");
+					 System.out.print("số nguyên tố là: ");
+					System.out.println( a[index] + " ");
+					dem2++;
 				}
-			}		
+			}	
+			if(dem2 == 0) {
+				 System.out.print("ko có số nguyên tố ");
+			}
 //sap xep
-		System.out.print("\ntăng dần:");
+		System.out.print("\nsắp xếp tăng dần:");
 		for( index=0; index < n; index++)
 		{
 			for( int index2=index+ 1 ; index2 < n; index2++)
