@@ -3,19 +3,16 @@ package baiTap;
 import java.util.Scanner;
 
 public class Mang {
-
 	public static void main(String[] args) {
-	
 		Scanner scanner = new Scanner(System.in);
 		int index =0;
-		System.out.print("nhập vào số phấn tử của mảng:");
-		int n = scanner.nextInt();
+		int n;
 		do {
+			System.out.print("nhập vào số phấn tử của mảng:");
+			n = scanner.nextInt();
 			if(n <= 0)
 			{
-				System.out.println("nhập sai....."+"\nnhập lại..... ");
-				System.out.print("nhập vào số phấn tử của mảng:");
-				 n = scanner.nextInt();
+				System.out.println("nhập sai....."+"\nnhập lại..... ");	
 			}
 		}while(n <= 0);
 		
@@ -58,12 +55,13 @@ public class Mang {
     
 		   }
 		   System.out.println("max=" + max);
+		   
 //so ngto
-		   int dem=0;
+		  
 		   int dem2=0;
 			for( index=0; index < n; index++)
 			{
-				
+				 int dem=0;
 				for( int itemp = 1; itemp <= a[index]; itemp++)
 				{
 					if(a[index] % itemp == 0)
@@ -77,12 +75,13 @@ public class Mang {
 					System.out.println( a[index] + " ");
 					dem2++;
 				}
+				
 			}	
 			if(dem2 == 0) {
-				 System.out.print("ko có số nguyên tố ");
+				 System.out.println("ko có số nguyên tố ");
 			}
 //sap xep
-		System.out.print("\nsắp xếp tăng dần:");
+		System.out.print("sắp xếp tăng dần:");
 		for( index=0; index < n; index++)
 		{
 			for( int index2=index+ 1 ; index2 < n; index2++)
